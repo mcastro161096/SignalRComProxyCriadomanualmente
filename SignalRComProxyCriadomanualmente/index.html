@@ -7,10 +7,24 @@
     <script src="Scripts/jquery.signalR-2.4.2.min.js"></script>
     <script>
 
+        $(function () {
+            var connection = $.hubConnection();
+            var proxy = connection.createHubProxy("myServer");
+
+            connection.start().done(function () {
+                $("#sendAlert").click(function () {
+                    proxy.invoke("AlertAll", "Opa");
+                });
+            });
+
+            proxy.on("clientAlertAll", function (msg) {
+                alert(msg);
+            });
+        });
 
     </script>
 </head>
 <body>
-
+    <input type="button" id="sendAlert"  value="Send Alert" />
 </body>
 </html>
