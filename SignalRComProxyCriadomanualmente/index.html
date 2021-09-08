@@ -5,26 +5,31 @@
     <title>Alert</title>
     <script src="Scripts/jquery-1.6.4.min.js"></script>
     <script src="Scripts/jquery.signalR-2.4.2.min.js"></script>
-    <script>
-
-        //$(function () {
-        //    var connection = $.hubConnection();
-        //    var proxy = connection.createHubProxy("myServer");
-
-        //    connection.start().done(function () {
-        //        $("#sendAlert").click(function () {
-        //            proxy.invoke("AlertAll", "Opa");
-        //        });
-        //    });
-
-        //    proxy.on("clientAlertAll", function (msg) {
-        //        alert(msg);
-        //    });
-        //});
-
-    </script>
+    <script src="Scripts/Board.js"></script>
+    
+    <style>
+        div{
+            margin:3px;
+        }
+        canvas{
+            border:2px solid #AAAAAA;
+            cursor:default;
+        }
+    </style>
 </head>
 <body>
-    <input type="button" id="sendAlert"  value="Send Alert" />
+    <div>
+        <div>
+            <label for="color">Color:</label>
+            <select id="color"></select>
+        </div>
+        <canvas id="canvas" width="250" height="250"></canvas>
+
+        <div>
+            <button id="clear">Clear</button>
+        </div>
+    </div>
+
+    <!--<input type="button" id="sendAlert"  value="Send Alert" />-->
 </body>
 </html>
