@@ -31,6 +31,7 @@ $(function () {
         if (buttonPressed)
         {
             setPoint(e.offsetX, e.offsetY, colorElement.val());
+            var logCor = colorElement.val();
         }
     });
 
@@ -80,8 +81,8 @@ $(function () {
 
     hub.client.update = function (points) {
         if (!points) return;
-            for (var x = 0; x < 250; x++) {
-                for (var y = 0; y < 250; y++) {
+            for (var x = 0; x < 900; x++) {
+                for (var y = 0; y < 550; y++) {
                     if (points[x][y]) {
                         setPoint(x, y, points[x][y])
                     }

@@ -9,8 +9,8 @@ namespace SignalRComProxyCriadomanualmente
 {
     public class Board : Hub
     {
-        private const int BoardWidth = 250;
-        private const int BoardHeight = 250;
+        private const int BoardWidth = 900;
+        private const int BoardHeight = 550;
         private static int[,] _buffer = GetEmpyBuffer();
 
         public Task BroadCastPoint(int x, int y)
